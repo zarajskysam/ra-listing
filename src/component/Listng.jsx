@@ -1,6 +1,7 @@
 import React from 'react';
 import { Item } from './Item/Item';
 import './main.css';
+import PropTypes from 'prop-types';
 
 
 
@@ -28,13 +29,6 @@ export const Listng = (props) => {
         return str;
     }
 
-    // const getQuantityStyle = (count) => {
-    //     if (count <= 10 ) return 'level-low';
-    //     if (count <= 20 ) return 'level-medium';
-    //     return 'level-high';
-    // }
-    
-
     return (
         getActiveItems(items).map(option => (
             <Item listing_id={option.listing_id} url={option.url} image={option.MainImage.url_570xN} title={getShortTitle(option.title)} price={getCorrectCurrency(option.currency_code, option.price)} quantity={option.quantity} key={option.listing_id}/>
@@ -42,3 +36,7 @@ export const Listng = (props) => {
         )
     )
 }
+
+Listng.propTypes = {
+    items: PropTypes.array,
+};

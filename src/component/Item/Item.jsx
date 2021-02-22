@@ -1,5 +1,6 @@
 import React from 'react';
 import  classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 export const Item = (props) => {
     const { listing_id, url, image, title, price, quantity } = props;
@@ -33,3 +34,12 @@ export const Item = (props) => {
         </div>
     )
 }
+
+Item.propTypes = {
+    listing_id: PropTypes.number,
+    url: PropTypes.string,
+    image: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.string,
+    quantity: PropTypes.number,
+};
